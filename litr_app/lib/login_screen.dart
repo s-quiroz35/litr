@@ -114,5 +114,19 @@ class _UserLoginState extends State<UserLogin> {
 class User {
   String name;
   String pwd;
-  User(this.name, this.pwd);
+  int points;
+  var hat_list;
+  User(String name, String pwd) {
+    this.name = name;
+    this.pwd = pwd;
+    this.points = 0;
+    this.hat_list = new List();
+  }
+
+}
+
+class Hat {
+  String image_path;
+  String name;
+  Hat(this.image_path, this.name);
 }

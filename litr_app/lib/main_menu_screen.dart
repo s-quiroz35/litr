@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:litr_app/login_screen.dart';
+import 'package:litr_app/profile_screen.dart';
 
 class MainMenu extends StatefulWidget {
   final User u;
@@ -63,7 +64,7 @@ class _MainMenuState extends State<MainMenu> {
                       onPressed: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => MainMenu(u: u))
+                            MaterialPageRoute(builder: (context) => ProfileScreen(u: u))
                         );
                       },
                       textColor: Colors.white,
