@@ -29,6 +29,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static List<Widget> _widgetOptions = <Widget>[
     new UserInfoPage(),
     Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+    Text(
       'Index 2: School',
       style: optionStyle,
     ),
@@ -37,6 +41,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      switch(index) {
+        case 0: 
+          appBarTitle = 'User Info';
+          break;
+        case 1:
+          appBarTitle = 'Litter Map';
+          break;
+        case 2:
+          appBarTitle = 'Litter Cam';
+          break;
+      }
     });
   }
 
@@ -44,7 +59,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: Text(appBarTitle),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
